@@ -12,15 +12,15 @@ logging.basicConfig(
     level=logging.INFO,  # Or DEBUG for more details, ERROR for less
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        #logging.FileHandler('bot.log'),  # Logs to file
+        logging.FileHandler('bot.log'),  # Logs to file
         logging.StreamHandler()  # Also prints to console
     ]
 )
 
 LOGGER = logging.getLogger(__name__)  # Use this for your logs
 BOT_TOKEN = os.environ["BOT_TOKEN"]
-SAVE_AUDIO_DIR = '/home/lygre'  # Create this folder first
-SAVE_VIDEO_DIR = '/home/lygre'
+SAVE_AUDIO_DIR = './saved_audio'  # Create this folder first
+SAVE_VIDEO_DIR = './saved_video'
 
 
 bot = telepot.Bot(BOT_TOKEN)
